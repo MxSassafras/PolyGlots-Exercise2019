@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Order {
     private Integer teamSize;
-    private ArrayList<Pizza> pizzas;
-    private ArrayList<String> ingredients;
+    private ArrayList<Pizza> pizzas = new ArrayList<Pizza>();
+    private ArrayList<String> ingredients = new ArrayList<String>();
     private Integer score;
 
     public Order(Integer teamSize) {
@@ -24,6 +24,10 @@ public class Order {
 
     public ArrayList<Pizza> getPizzas() {
         return this.pizzas;
+    }
+
+    public int getTeamSize() {
+        return this.teamSize;
     }
 
     public Integer comparePizza(Pizza pizza) {

@@ -28,18 +28,19 @@ public class Program {
     }
 
     public static void FillOrders(int teamSize) {
+        System.out.println("Run");
         Order order = new Order(teamSize);
 
         order.addPizza(pizzas.get(0));
         pizzas.remove(0);
 
         for (int i = pizzas.size() - 1; i >= 0; i--) {
-            if (!(order.comparePizza(pizzas.get(i)) = pizzas.get(i).getIngredients().size())) {
+            if (!(order.comparePizza(pizzas.get(i)) == pizzas.get(i).getIngredients().size())) {
                 order.addPizza(pizzas.get(i));
                 pizzas.remove(i);
                 i++;
             }
-            if (order.getPizzas().size() = teamSize) {
+            if (order.getPizzas().size() == teamSize) {
                 break;
             }
         }
@@ -48,15 +49,14 @@ public class Program {
             while (true) {
                 int diffIng = 1;
 
-                for (int i = pizzas.size(); i >= 0; i--) {
-                    if (order.comparePizza(pizzas.get(i)) = pizzas.get(i).getIngredients().size() - i) {
+                for (int i = pizzas.size() - 1; i >= 0; i--) {
+                    if (order.comparePizza(pizzas.get(i)) == pizzas.get(i).getIngredients().size() - i) {
                         order.addPizza(pizzas.get(i));
                         pizzas.remove(i);
-                        i++;
                     }
                 }
 
-                if (order.getPizzas().size() = teamSize || diffIng = 4) {
+                if (order.getPizzas().size() == teamSize || diffIng == 4) {
                     break;
                 }
 
@@ -91,27 +91,31 @@ public class Program {
             int rTeamsOfThree = teamsOfThree;
             int rTeamsOfTwo = teamsOfTwo;
 
-            if (rPizzaCount % 4 = 3) {
-                FillOrder(3);
+            if (rPizzaCount % 4 == 3) {
+                System.out.println("Team3");
+                FillOrders(3);
 
                 rPizzaCount -= 3;
                 rTeamsOfThree--;
-            } else if (rPizzaCount % 4 = 2) {
-                FillOrder(2);
+            } else if (rPizzaCount % 4 == 2) {
+                System.out.println("Team2");
+                FillOrders(2);
 
                 rPizzaCount -= 2;
                 rTeamsOfTwo--;
-            } else if (rPizzaCount % 4 = 1) {
-                FillOrder(3);
-                FillOrder(2);
+            } else if (rPizzaCount % 4 == 1) {
+                System.out.println("Team3&2");
+                FillOrders(3);
+                FillOrders(2);
 
                 rPizzaCount -= 5;
                 rTeamsOfThree--;
                 rTeamsOfTwo--;
             }
 
-            while (rPizzaCount % 4 = 0 && rTeamsOfFour > 0) {
-                FillOrder(4);
+            while (pizzas.size() >= 4 && rPizzaCount % 4 == 0 && rTeamsOfFour > 0) {
+                System.out.println("Team4");
+                FillOrders(4);
 
                 rPizzaCount -= 4;
                 rTeamsOfFour--;
@@ -124,14 +128,19 @@ public class Program {
 
         int numberOfOrders = orders.size();
 
-        outputString += String.valueOf(numberOfOrders) + "/n";
+        outputString += String.valueOf(numberOfOrders) + "\n";
 
         for (int i = 0; i < orders.size(); i++) {
+            outputString += String.valueOf(orders.get(i).getTeamSize()) + " ";
             for (int j = 0; j < orders.get(i).getPizzas().size(); j++) {
-                outputString += String.valueOf(orders.get(i).getPizzas().get(j));
+                outputString += String.valueOf(orders.get(i).getPizzas().get(j).getId());
+
+                if (j < orders.get(i).getPizzas().size() - 1) {
+                    outputString += " ";
+                }
             }
             if (i < orders.size() - 1) {
-                outputString += "/n";
+                outputString += "\n";
             }
         }
 
