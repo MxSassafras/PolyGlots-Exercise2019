@@ -74,6 +74,8 @@ public class Program {
         }
 
         orders.add(order);
+        System.out.println("PizzaCount" + pizzas.size());
+        System.out.println("OrderCount" + orders.size());
     }
 
     public static void Calculation() {
@@ -131,8 +133,18 @@ public class Program {
             }
 
             if (rPizzaCount > 1) {
-                if ((rPizzaCount - (3 * rTeamsOfThree)) % 2 == 0) {
+                boolean test = false;
+                int negTeamsOfThree = 0;
+
+                while (!test) {
                     for (int i = 0; i < rTeamsOfThree; i++) {
+                        test = (rPizzaCount - (3 * rTeamsOfThree - i)) % 2 == 0;
+                        negTeamsOfThree++;
+                    }
+                }
+
+                if ((rPizzaCount - (3 * (rTeamsOfThree - negTeamsOfThree))) % 2 == 0) {
+                    for (int i = 0; i < rTeamsOfThree - negTeamsOfThree; i++) {
                         FillOrders(3);
                         rPizzaCount -= 3;
                         rTeamsOfThree--;
