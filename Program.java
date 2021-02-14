@@ -1,22 +1,60 @@
+import Exercise2019Package.*;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.*;
+import java.util.Comparator;
+import java.util.Collections;
 
 public class Program {
-    public static void main (String [] args) {
+    private static int pizzaCount;
+    private static int teamsOfTwo;
+    private static int teamsOfThree;
+    private static int teamsOfFour;
 
+    private static ArrayList<Pizza> pizzas;
+    private static ArrayList<Order> orders;
+
+    public static void main (String[] args) {
+        String fileName = args[0];
+        ReadInput(fileName);
+        String outputString = BuildOutputString();
+        WriteOutput(fileName, outputString);
+    }
+
+    public static void Calculation() {
+        Collections.sort(pizzas, new Comparator<Pizza>() {
+            @Override public int compare(Pizza p1, Pizza p2) {
+                return p1.getIngredients().size() - p2.getIngredients().size();
+            }
+        });
     }
 
     private static String BuildOutputString() {
         String outputString = "";
 
+        int numberOfOrders = orders.size();
+
+        outputString += String.valueOf(numberOfOrders) + "/n";
+
+        for (int i = 0; i < orders.size(); i++) {
+            for (int j = 0; j < orders.get(i).getPizzas().size(); j++) {
+                outputString += String.valueOf(orders.get(i).getPizzas().get(j));
+            }
+            if (i < orders.size() - 1) {
+                outputString += "/n";
+            }
+        }
+
         return outputString;
     }
 
     private static void ReadInput(String name) {
-        String inputPath = "C:\\Users\\jasoncfinley\\IdeaProjects\\Polyglots2021\\InputFiles\\" + name + ".txt";
+        String inputPath = "InputFiles\\" + name + ".txt";
         System.out.println(inputPath);
 
         try {
@@ -24,40 +62,26 @@ public class Program {
             Scanner myReader = new Scanner(myObj);
 
             // Gather first line data
-            String firstLine = myReader.nextLine();
+            String firstRow = myReader.nextLine();
 
-            rows = Integer.parseInt(firstLine.split(" ")[0]);
-            slots = Integer.parseInt(firstLine.split(" ")[1]);
-            unavailableSlotCount = Integer.parseInt(firstLine.split(" ")[2]);
-            poolCount = Integer.parseInt(firstLine.split(" ")[3]);
-            serverCount = Integer.parseInt(firstLine.split(" ")[4]);
+            pizzaCount = Integer.parseInt(firstRow.split(" ")[0]);
+            teamsOfTwo = Integer.parseInt(firstRow.split(" ")[1]);
+            teamsOfThree = Integer.parseInt(firstRow.split(" ")[2]);
+            teamsOfFour = Integer.parseInt(firstRow.split(" ")[3]);
 
-            int unavailableSlots[][] = new int[unavailableSlotCount][2];
+            for (int i = 0; i < pizzaCount; i++) {
+                Pizza pizza = new Pizza(i);
 
-            for (int i = 0; i < unavailableSlotCount; i++) {
                 String data = myReader.nextLine();
-                unavailableSlots[i][0] = Integer.parseInt(data.split(" ")[0]);
-                unavailableSlots[i][1] = Integer.parseInt(data.split(" ")[1]);
-            }
 
-            serverRoom = new ServerRoom(rows, slots);
-            pools = new Pool[poolCount];
+                int ingredientCount = Integer.parseInt(data.split(" ")[0]);
 
-            serverRoom.addUnavailableSlots(unavailableSlots);
+                System.out.println(ingredientCount);
 
-            servers = new Server[serverCount];
-
-            for (int i = 0; i < serverCount; i++) {
-                String data = myReader.nextLine();
-                int size = Integer.parseInt(data.split(" ")[0]);
-                int capacity = Integer.parseInt(data.split(" ")[1]);
-
-                Server server = new Server(size, capacity);
-                servers[i] = server;
-            }
-
-            for (int i = 0; i < serverCount; i++) {
-                servers[i].printStats();
+                for (int j = 1; j <= ingredientCount; j++) {
+                    System.out.println(data.split(" ")[j]);
+                    pizza.addIngredient(data.split(" ")[j]);
+                }
             }
 
             myReader.close();
@@ -68,7 +92,7 @@ public class Program {
     }
 
     private static void WriteOutput(String name, String str) {
-        String outputPath = "C:\\Users\\jasoncfinley\\IdeaProjects\\Polyglots2021\\OutputFiles\\" + name + ".txt";
+        String outputPath = "OutputFiles\\" + name + ".txt";
 
         try {
             System.out.println(outputPath);
