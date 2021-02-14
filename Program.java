@@ -85,40 +85,68 @@ public class Program {
 
         int numberOfPlayers = teamsOfFour * 4 + teamsOfThree * 3 + teamsOfTwo * 2;
 
-        if (numberOfPlayers > pizzaCount) {
+        //if (numberOfPlayers > pizzaCount) {
+        if (true) {
             int rPizzaCount = pizzaCount;
             int rTeamsOfFour = teamsOfFour;
             int rTeamsOfThree = teamsOfThree;
             int rTeamsOfTwo = teamsOfTwo;
 
-            if (rPizzaCount % 4 == 3) {
-                System.out.println("Team3");
+            if (rPizzaCount % 4 == 3 && rTeamsOfThree > 0) {
                 FillOrders(3);
-
                 rPizzaCount -= 3;
                 rTeamsOfThree--;
-            } else if (rPizzaCount % 4 == 2) {
-                System.out.println("Team2");
+            } else if (rPizzaCount % 4 == 3) {
                 FillOrders(2);
-
+                rPizzaCount -= 2;
+                rTeamsOfTwo--;
+            } else if (rPizzaCount % 4 == 2 && rTeamsOfTwo > 0) {
+                FillOrders(2);
                 rPizzaCount -= 2;
                 rTeamsOfTwo--;
             } else if (rPizzaCount % 4 == 1) {
-                System.out.println("Team3&2");
-                FillOrders(3);
-                FillOrders(2);
+                if (rTeamsOfThree > 0) {
+                    FillOrders(3);
+                    rPizzaCount -= 3;
+                    rTeamsOfThree--;
+                }
 
-                rPizzaCount -= 5;
-                rTeamsOfThree--;
-                rTeamsOfTwo--;
+                if (rTeamsOfTwo > 0) {
+                    FillOrders(2);
+                    rPizzaCount -= 2;
+                    rTeamsOfTwo--;
+                }
             }
 
             while (pizzas.size() >= 4 && rPizzaCount % 4 == 0 && rTeamsOfFour > 0) {
-                System.out.println("Team4");
                 FillOrders(4);
-
                 rPizzaCount -= 4;
                 rTeamsOfFour--;
+            }
+
+            if (rPizzaCount % 3 == 2) {
+                FillOrders(2);
+                rPizzaCount -= 2;
+                rTeamsOfTwo--;
+            }
+
+            if (rPizzaCount > 1) {
+                if ((rPizzaCount - (3 * rTeamsOfThree)) % 2 == 0) {
+                    for (int i = 0; i < rTeamsOfThree; i++) {
+                        FillOrders(3);
+                        rPizzaCount -= 3;
+                        rTeamsOfThree--;
+                    }
+                    for (int i = 0; i < rPizzaCount / 2; i++) {
+                        FillOrders(2);
+                        rPizzaCount -= 2;
+                        rTeamsOfTwo--;
+
+                        if (rTeamsOfTwo == 0) {
+                            break;
+                        }
+                    }
+                }
             }
         }
     }
