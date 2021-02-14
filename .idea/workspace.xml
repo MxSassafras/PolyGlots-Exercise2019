@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9737bc11-6727-4329-8e61-3aca144bcd3c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program$1.class" afterPath="$PROJECT_DIR$/Program$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program.class" afterPath="$PROJECT_DIR$/Program.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Exercise2019Package/Order.java" afterPath="$PROJECT_DIR$/Exercise2019Package/Order.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Exercise2019Package/Pizza.java" afterPath="$PROJECT_DIR$/Exercise2019Package/Pizza.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OutputFiles/a_example.txt" afterPath="$PROJECT_DIR$/OutputFiles/a_example.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program.java" afterPath="$PROJECT_DIR$/Program.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -20,10 +21,11 @@
       <file leaf-file-name="Program.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Program.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="45" column="34" lean-forward="false" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+            <state relative-caret-position="563">
+              <caret line="122" column="1" lean-forward="true" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#BuildOutputString#0;class#Program#0" expanded="false" />
                 <element signature="method#ReadInput#0;class#Program#0" expanded="false" />
                 <element signature="method#WriteOutput#0;class#Program#0" expanded="false" />
               </folding>
@@ -288,7 +290,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Program.java</url>
-          <line>56</line>
+          <line>61</line>
           <properties />
         </line-breakpoint>
       </breakpoints>
@@ -303,6 +305,7 @@
           <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#BuildOutputString#0;class#Program#0" expanded="false" />
             <element signature="method#ReadInput#0;class#Program#0" expanded="false" />
             <element signature="method#WriteOutput#0;class#Program#0" expanded="false" />
           </folding>
@@ -331,6 +334,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#BuildOutputString#0;class#Program#0" expanded="false" />
             <element signature="method#ReadInput#0;class#Program#0" expanded="false" />
             <element signature="method#WriteOutput#0;class#Program#0" expanded="false" />
           </folding>
@@ -383,10 +387,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Program.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="45" column="34" lean-forward="false" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+        <state relative-caret-position="563">
+          <caret line="122" column="1" lean-forward="true" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#BuildOutputString#0;class#Program#0" expanded="false" />
             <element signature="method#ReadInput#0;class#Program#0" expanded="false" />
             <element signature="method#WriteOutput#0;class#Program#0" expanded="false" />
           </folding>

@@ -16,12 +16,13 @@ public class Program {
     private static int teamsOfThree;
     private static int teamsOfFour;
 
-    private static ArrayList<Pizza> pizzas;
-    private static ArrayList<Order> orders;
+    private static ArrayList<Pizza> pizzas = new ArrayList<Pizza>();
+    private static ArrayList<Order> orders = new ArrayList<Order>();
 
     public static void main (String[] args) {
         String fileName = args[0];
         ReadInput(fileName);
+        Calculation();
         String outputString = BuildOutputString();
         WriteOutput(fileName, outputString);
     }
@@ -29,9 +30,13 @@ public class Program {
     public static void Calculation() {
         Collections.sort(pizzas, new Comparator<Pizza>() {
             @Override public int compare(Pizza p1, Pizza p2) {
-                return p1.getIngredients().size() - p2.getIngredients().size();
+                return p2.getIngredients().size() - p1.getIngredients().size();
             }
         });
+
+        for (int i = 0; i < pizzas.size(); i++) {
+            System.out.println(pizzas.get(i).getIngredients().size());
+        }
     }
 
     private static String BuildOutputString() {
@@ -76,12 +81,11 @@ public class Program {
 
                 int ingredientCount = Integer.parseInt(data.split(" ")[0]);
 
-                System.out.println(ingredientCount);
-
                 for (int j = 1; j <= ingredientCount; j++) {
-                    System.out.println(data.split(" ")[j]);
                     pizza.addIngredient(data.split(" ")[j]);
                 }
+
+                pizzas.add(pizza);
             }
 
             myReader.close();
