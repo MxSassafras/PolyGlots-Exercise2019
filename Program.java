@@ -27,6 +27,55 @@ public class Program {
         WriteOutput(fileName, outputString);
     }
 
+    public static void FillOrders(int teamSize) {
+        Order order = new Order(teamSize);
+
+        order.addPizza(pizzas.get(0));
+        pizzas.remove(0);
+
+        for (int i = pizzas.size() - 1; i >= 0; i--) {
+            if (!(order.comparePizza(pizzas.get(i)) = pizzas.get(i).getIngredients().size())) {
+                order.addPizza(pizzas.get(i));
+                pizzas.remove(i);
+                i++;
+            }
+            if (order.getPizzas().size() = teamSize) {
+                break;
+            }
+        }
+
+        if (order.getPizzas().size() < teamSize) {
+            while (true) {
+                int diffIng = 1;
+
+                for (int i = pizzas.size(); i >= 0; i--) {
+                    if (order.comparePizza(pizzas.get(i)) = pizzas.get(i).getIngredients().size() - i) {
+                        order.addPizza(pizzas.get(i));
+                        pizzas.remove(i);
+                        i++;
+                    }
+                }
+
+                if (order.getPizzas().size() = teamSize || diffIng = 4) {
+                    break;
+                }
+
+                diffIng++;
+            }
+        }
+
+        if (order.getPizzas().size() < teamSize) {
+            int remaining = 4 - order.getPizzas().size();
+
+            for (int i = 0; i < remaining; i++) {
+                order.addPizza(pizzas.get(pizzas.size() - 1));
+                pizzas.remove(pizzas.size() - 1);
+            }
+        }
+
+        orders.add(order);
+    }
+
     public static void Calculation() {
         Collections.sort(pizzas, new Comparator<Pizza>() {
             @Override public int compare(Pizza p1, Pizza p2) {
@@ -34,8 +83,39 @@ public class Program {
             }
         });
 
-        for (int i = 0; i < pizzas.size(); i++) {
-            System.out.println(pizzas.get(i).getIngredients().size());
+        int numberOfPlayers = teamsOfFour * 4 + teamsOfThree * 3 + teamsOfTwo * 2;
+
+        if (numberOfPlayers > pizzaCount) {
+            int rPizzaCount = pizzaCount;
+            int rTeamsOfFour = teamsOfFour;
+            int rTeamsOfThree = teamsOfThree;
+            int rTeamsOfTwo = teamsOfTwo;
+
+            if (rPizzaCount % 4 = 3) {
+                FillOrder(3);
+
+                rPizzaCount -= 3;
+                rTeamsOfThree--;
+            } else if (rPizzaCount % 4 = 2) {
+                FillOrder(2);
+
+                rPizzaCount -= 2;
+                rTeamsOfTwo--;
+            } else if (rPizzaCount % 4 = 1) {
+                FillOrder(3);
+                FillOrder(2);
+
+                rPizzaCount -= 5;
+                rTeamsOfThree--;
+                rTeamsOfTwo--;
+            }
+
+            while (rPizzaCount % 4 = 0 && rTeamsOfFour > 0) {
+                FillOrder(4);
+
+                rPizzaCount -= 4;
+                rTeamsOfFour--;
+            }
         }
     }
 

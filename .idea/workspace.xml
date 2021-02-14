@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9737bc11-6727-4329-8e61-3aca144bcd3c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program$1.class" afterPath="$PROJECT_DIR$/Program$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program.class" afterPath="$PROJECT_DIR$/Program.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OutputFiles/a_example.txt" afterPath="$PROJECT_DIR$/OutputFiles/a_example.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Exercise2019Package/Order.class" afterPath="$PROJECT_DIR$/Exercise2019Package/Order.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Exercise2019Package/Order.java" afterPath="$PROJECT_DIR$/Exercise2019Package/Order.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program.java" afterPath="$PROJECT_DIR$/Program.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,8 +19,8 @@
       <file leaf-file-name="Program.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Program.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="563">
-              <caret line="122" column="1" lean-forward="true" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
+            <state relative-caret-position="410">
+              <caret line="36" column="50" lean-forward="false" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#BuildOutputString#0;class#Program#0" expanded="false" />
@@ -55,11 +53,13 @@
       <file leaf-file-name="Order.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Exercise2019Package/Order.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+            <state relative-caret-position="546">
+              <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
               <folding>
-                <element signature="e#700#701#0" expanded="true" />
-                <element signature="e#734#735#0" expanded="true" />
+                <element signature="e#253#254#0" expanded="true" />
+                <element signature="e#293#294#0" expanded="true" />
+                <element signature="e#642#643#0" expanded="true" />
+                <element signature="e#676#677#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -82,9 +82,9 @@
         <option value="$PROJECT_DIR$/Slide.java" />
         <option value="$PROJECT_DIR$/Exercise2019Package/Photo.java" />
         <option value="$PROJECT_DIR$/Exercise2019Package/Slide.java" />
-        <option value="$PROJECT_DIR$/Exercise2019Package/Order.java" />
         <option value="$PROJECT_DIR$/Exercise2019Package/Pizza.java" />
         <option value="$PROJECT_DIR$/Program.java" />
+        <option value="$PROJECT_DIR$/Exercise2019Package/Order.java" />
       </list>
     </option>
   </component>
@@ -290,7 +290,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Program.java</url>
-          <line>61</line>
+          <line>141</line>
           <properties />
         </line-breakpoint>
       </breakpoints>
@@ -376,19 +376,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Exercise2019Package/Order.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        <state relative-caret-position="546">
+          <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
           <folding>
-            <element signature="e#700#701#0" expanded="true" />
-            <element signature="e#734#735#0" expanded="true" />
+            <element signature="e#253#254#0" expanded="true" />
+            <element signature="e#293#294#0" expanded="true" />
+            <element signature="e#642#643#0" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Program.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="122" column="1" lean-forward="true" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
+        <state relative-caret-position="410">
+          <caret line="36" column="50" lean-forward="false" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#BuildOutputString#0;class#Program#0" expanded="false" />

@@ -3,14 +3,12 @@ package Exercise2019Package;
 import java.util.ArrayList;
 
 public class Order {
-    private Integer id;
     private Integer teamSize;
     private ArrayList<Pizza> pizzas;
     private ArrayList<String> ingredients;
     private Integer score;
 
-    public Order(Integer id, Integer teamSize) {
-        this.id = id;
+    public Order(Integer teamSize) {
         this.teamSize = teamSize;
     }
 
